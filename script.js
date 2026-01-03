@@ -1,20 +1,29 @@
-// Glatko skrolovanje
+// Glatko skrolovanje (Smooth Scroll) za sve linkove u navigaciji
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 70, // Odbijamo visinu navbar-a
+                behavior: 'smooth'
+            });
+        }
     });
 });
 
-// Promjena boje navigacije pri skrolovanju
+// Promjena senke na navigaciji kada korisnik krene skrolovati
 window.addEventListener('scroll', () => {
-    const nav = document.querySelector('.navbar');
-    if(window.scrollY > 50) {
-        nav.style.background = '#ffffff';
-        nav.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 20) {
+        navbar.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+        navbar.style.height = '70px'; // Malo se smanji radi boljeg pregleda
     } else {
-        nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+        navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
+        navbar.style.height = '80px';
     }
+    navbar.style.transition = 'all 0.3s ease';
 });

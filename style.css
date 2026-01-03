@@ -1,60 +1,201 @@
+/* Fontovi i Osnovne Boje */
 :root {
-    --primary-blue: #004a99;
-    --accent-yellow: #ffcc00;
+    --primary-blue: #004a99; /* Tamno plava */
+    --accent-yellow: #ffcc00; /* Žuta */
     --white: #ffffff;
-    --dark: #1a1a1a;
+    --dark: #111111;
     --grey: #f4f4f4;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Montserrat', sans-serif; line-height: 1.6; color: #333; }
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* Navbar */
-.navbar { background: var(--white); height: 80px; display: flex; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-.navbar .container { display: flex; justify-content: space-between; align-items: center; width: 100%; }
-.logo { font-size: 1.8rem; text-decoration: none; color: var(--dark); }
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigacija */
+.navbar {
+    background: var(--white);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: var(--dark);
+    letter-spacing: 1px;
+}
+
 .logo b { color: var(--primary-blue); font-weight: 800; }
+
 .nav-links { display: flex; list-style: none; }
-.nav-links a { text-decoration: none; color: var(--dark); font-weight: 600; margin-left: 25px; transition: 0.3s; }
-.nav-links a:hover { color: var(--primary-blue); }
 
-/* Hero - POTPUNO PLAVO */
-.hero { height: 70vh; background: var(--primary-blue); display: flex; align-items: center; text-align: center; color: var(--white); }
-.hero h1 { font-size: 3rem; text-transform: uppercase; width: 100%; }
-.hero span { color: var(--accent-yellow); }
-.hero p { font-size: 1.2rem; margin: 20px 0; opacity: 0.9; }
+.nav-links li a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 600;
+    margin-left: 20px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
 
-/* Buttons */
-.btn { padding: 12px 35px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.3s; }
+.nav-links li a:hover { color: var(--primary-blue); }
+
+/* Hero Sekcija - POTPUNO PLAVA */
+.hero {
+    height: 70vh;
+    background: var(--primary-blue); /* Nema slike, samo čista plava */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+}
+
+.hero h1 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.hero h1 span { color: var(--accent-yellow); }
+
+.hero p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    opacity: 0.9;
+}
+
+/* Dugmad */
+.btn {
+    padding: 12px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-block;
+    transition: 0.3s;
+}
+
 .btn-primary { background: var(--accent-yellow); color: var(--dark); }
-.btn-primary:hover { transform: scale(1.05); }
+.btn-primary:hover { transform: scale(1.05); background: var(--white); }
 
 /* Sekcije */
 section { padding: 80px 0; }
 .section-title { text-align: center; margin-bottom: 40px; }
-.underline { width: 60px; height: 4px; background: var(--accent-yellow); margin: 10px auto; }
+.underline { width: 50px; height: 4px; background: var(--accent-yellow); margin: 10px auto; }
 .grey-bg { background: var(--grey); }
 .empty-section { min-height: 250px; }
 
-/* About Grid */
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-.about-image img { width: 100%; border-radius: 10px; box-shadow: 10px 10px 0 var(--accent-yellow); }
+/* About Grid (O nama) */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
 
-/* Services */
-.services-grid-simple { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.service-card { background: var(--grey); padding: 40px; border-radius: 15px; text-align: center; transition: 0.3s; }
-.service-card i { font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 15px; }
+.about-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 15px 15px 0 var(--accent-yellow); /* Moderan efekat sa žutom bojom */
+}
+
+/* Services (Nudimo) */
+.services-grid-simple {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.service-card {
+    background: var(--grey);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.service-card:hover { transform: translateY(-5px); background: #eee; }
+
+.service-card i {
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+}
 
 /* Footer & Kontakt */
-footer { background: var(--dark); color: var(--white); text-align: center; padding: 60px 0; }
-.contact-links { display: flex; justify-content: center; gap: 30px; margin: 30px 0; flex-wrap: wrap; }
-.contact-item { color: var(--white); text-decoration: none; font-size: 1.2rem; display: flex; align-items: center; gap: 10px; transition: 0.3s; }
-.contact-item:hover { color: var(--accent-yellow); }
-.contact-item i { font-size: 1.5rem; }
-.fa-viber { color: #7360f2; }
-.copyright { opacity: 0.5; margin-top: 20px; }
+footer {
+    background: var(--dark);
+    color: var(--white);
+    text-align: center;
+    padding: 60px 0;
+}
 
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.contact-item:hover {
+    background: rgba(255,255,255,0.05);
+    color: var(--accent-yellow);
+    border-color: var(--accent-yellow);
+}
+
+.contact-item i { font-size: 1.4rem; }
+
+/* Specifične boje za ikonice */
+.fa-viber { color: #7360f2; }
+.fa-instagram { color: #e1306c; }
+.fa-facebook { color: #1877f2; }
+
+.copyright { opacity: 0.5; font-size: 0.8rem; margin-top: 30px; }
+
+/* Mobilna verzija */
 @media (max-width: 768px) {
     .nav-links { display: none; }
     .about-grid, .services-grid-simple { grid-template-columns: 1fr; }

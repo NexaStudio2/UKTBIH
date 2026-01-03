@@ -3,165 +3,60 @@
     --accent-yellow: #ffcc00;
     --white: #ffffff;
     --dark: #1a1a1a;
+    --grey: #f4f4f4;
 }
 
-* {
-    margin: 0; padding: 0; box-sizing: border-box;
-}
-
-body {
-    font-family: 'Montserrat', sans-serif;
-    color: #333;
-    line-height: 1.6;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Montserrat', sans-serif; line-height: 1.6; color: #333; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
 /* Navbar */
-.navbar {
-    background: var(--white);
-    height: 80px;
-    display: flex;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.8rem;
-    text-decoration: none;
-    color: var(--dark);
-}
-
+.navbar { background: var(--white); height: 80px; display: flex; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+.navbar .container { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+.logo { font-size: 1.8rem; text-decoration: none; color: var(--dark); }
 .logo b { color: var(--primary-blue); font-weight: 800; }
-
 .nav-links { display: flex; list-style: none; }
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--dark);
-    font-weight: 600;
-    margin-left: 30px;
-    transition: 0.3s;
-}
-
+.nav-links a { text-decoration: none; color: var(--dark); font-weight: 600; margin-left: 25px; transition: 0.3s; }
 .nav-links a:hover { color: var(--primary-blue); }
 
-/* Hero */
-.hero {
-    height: 80vh;
-    background: linear-gradient(rgba(0, 74, 153, 0.8), rgba(0, 74, 153, 0.8)), 
-                url('https://images.unsplash.com/photo-1519861531473-9200262188bf?auto=format&fit=crop&w=1500&q=80');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: var(--white);
-}
-
-.hero h1 { font-size: 3.5rem; text-transform: uppercase; }
+/* Hero - POTPUNO PLAVO */
+.hero { height: 70vh; background: var(--primary-blue); display: flex; align-items: center; text-align: center; color: var(--white); }
+.hero h1 { font-size: 3rem; text-transform: uppercase; width: 100%; }
 .hero span { color: var(--accent-yellow); }
+.hero p { font-size: 1.2rem; margin: 20px 0; opacity: 0.9; }
 
 /* Buttons */
-.btn {
-    padding: 12px 35px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 700;
-    display: inline-block;
-    margin: 10px;
-    transition: 0.3s;
-}
-
+.btn { padding: 12px 35px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.3s; }
 .btn-primary { background: var(--accent-yellow); color: var(--dark); }
 .btn-primary:hover { transform: scale(1.05); }
 
-.btn-outline { border: 2px solid var(--white); color: var(--white); }
-.btn-outline:hover { background: var(--white); color: var(--primary-blue); }
+/* Sekcije */
+section { padding: 80px 0; }
+.section-title { text-align: center; margin-bottom: 40px; }
+.underline { width: 60px; height: 4px; background: var(--accent-yellow); margin: 10px auto; }
+.grey-bg { background: var(--grey); }
+.empty-section { min-height: 250px; }
 
-/* Sections */
-section { padding: 100px 0; }
-
-.section-title { text-align: center; margin-bottom: 50px; }
-
-.underline {
-    width: 60px; height: 4px; background: var(--accent-yellow); margin: 10px auto;
-}
-
-/* About */
-.about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
-}
-
-.about-text ul { list-style: none; margin-top: 20px; }
-.about-text i { color: var(--primary-blue); margin-right: 10px; }
-
-.about-image img {
-    width: 100%;
-    border-radius: 15px;
-    box-shadow: 20px 20px 0 var(--accent-yellow);
-}
+/* About Grid */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.about-image img { width: 100%; border-radius: 10px; box-shadow: 10px 10px 0 var(--accent-yellow); }
 
 /* Services */
-.services { background: #f9f9f9; }
+.services-grid-simple { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.service-card { background: var(--grey); padding: 40px; border-radius: 15px; text-align: center; transition: 0.3s; }
+.service-card i { font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 15px; }
 
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-.service-card {
-    background: var(--white);
-    padding: 40px;
-    border-radius: 15px;
-    text-align: center;
-    transition: 0.3s;
-}
-
-.service-card:hover { transform: translateY(-10px); }
-
-.service-card i { font-size: 3rem; color: var(--primary-blue); margin-bottom: 20px; }
-
-/* Footer */
-footer {
-    background: var(--dark);
-    color: var(--white);
-    text-align: center;
-    padding: 60px 0;
-}
-
-.social-icons { margin: 20px 0; }
-
-.social-icons i {
-    font-size: 2rem;
-    margin: 0 15px;
-    color: var(--accent-yellow);
-    transition: 0.3s;
-}
-
-.social-icons i:hover { color: var(--white); }
-
-.copyright { opacity: 0.6; font-size: 0.9rem; }
+/* Footer & Kontakt */
+footer { background: var(--dark); color: var(--white); text-align: center; padding: 60px 0; }
+.contact-links { display: flex; justify-content: center; gap: 30px; margin: 30px 0; flex-wrap: wrap; }
+.contact-item { color: var(--white); text-decoration: none; font-size: 1.2rem; display: flex; align-items: center; gap: 10px; transition: 0.3s; }
+.contact-item:hover { color: var(--accent-yellow); }
+.contact-item i { font-size: 1.5rem; }
+.fa-viber { color: #7360f2; }
+.copyright { opacity: 0.5; margin-top: 20px; }
 
 @media (max-width: 768px) {
     .nav-links { display: none; }
-    .about-grid { grid-template-columns: 1fr; }
-    .hero h1 { font-size: 2.2rem; }
+    .about-grid, .services-grid-simple { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2rem; }
 }

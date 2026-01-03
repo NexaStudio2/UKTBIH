@@ -37,7 +37,7 @@ body {
     font-size: 1.2rem; 
     margin: 25px auto; 
     max-width: 850px;
-    text-transform: lowercase; 
+    /* Ovdje je bila greška, sada je obrisana */
 }
 
 /* NAVIGACIJA */
@@ -70,7 +70,6 @@ body {
     color: #111; 
     font-weight: 600; 
     margin-left: 20px; 
-    text-transform: lowercase; 
 }
 
 /* SEKCIJE */
@@ -80,15 +79,17 @@ section { padding: 90px 0; }
 h2 { font-weight: 800; color: #111; font-size: 2.2rem; }
 .underline { width: 50px; height: 5px; background: #ffcc00; margin: 10px 0 25px; }
 
-p { text-transform: lowercase; }
-
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
 .about-image img { width: 100%; border-radius: 12px; box-shadow: 15px 15px 0 #ffcc00; }
 
+/* EDUKACIJE KARTICE */
 .services-grid-simple { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
 .service-card { background: #f9f9f9; padding: 40px; border-radius: 20px; text-align: center; }
-/* UKLONJEN LOWERCASE DA BI OSTALA VELIKA SLOVA IZ HTML-A */
-.service-card h3 { font-weight: 700; margin-top: 15px; }
+.service-card h3 { 
+    font-weight: 700; 
+    margin-top: 15px; 
+    /* Više nema lowercase naredbe ovdje */
+}
 .service-card i { font-size: 3rem; color: #004a99; }
 
 /* DUGME */
@@ -100,7 +101,6 @@ p { text-transform: lowercase; }
     font-weight: 800; 
     border-radius: 50px; 
     display: inline-block; 
-    text-transform: lowercase;
     transition: 0.3s;
 }
 .btn:hover { background: #ffffff; transform: translateY(-3px); }
@@ -108,7 +108,7 @@ p { text-transform: lowercase; }
 /* FOOTER */
 footer { background: #111; color: #fff; text-align: center; padding: 70px 0; }
 .contact-links { display: flex; justify-content: center; gap: 30px; margin: 30px 0; }
-.contact-item { color: #fff; text-decoration: none; font-size: 1.2rem; text-transform: lowercase; }
+.contact-item { color: #fff; text-decoration: none; font-size: 1.2rem; }
 .fa-viber { color: #7360f2; }
 
 @media (max-width: 768px) { 
